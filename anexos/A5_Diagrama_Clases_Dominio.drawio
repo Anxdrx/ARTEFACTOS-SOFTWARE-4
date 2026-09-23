@@ -1,0 +1,306 @@
+<mxfile host="Electron">
+  <diagram name="Diagrama-Clases-Dominio" id="RA_System_Class_Diagram">
+    <mxGraphModel dx="5997" dy="2457" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mod_users" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#B3B3B3;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=15;spacingLeft=12;spacingTop=10;fontColor=#666666;" value="Módulo de Usuarios y Accesos (RF-01 a RF-04)" vertex="1">
+          <mxGeometry height="320" width="1500" x="50" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="class_user" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="User" vertex="1">
+          <mxGeometry height="210" width="230" x="90" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_user" parent="class_user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- fullName: String&#xa;- identityDocument: String&#xa;- email: String&#xa;- password: String&#xa;- role: RoleEnum&#xa;- active: Boolean&#xa;- failedAttempts: Integer&#xa;- lockExpiration: LocalDateTime" vertex="1">
+          <mxGeometry height="148" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_user" parent="class_user" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="230" y="174" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_user" parent="class_user" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="230" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="enum_role" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="«enumeration»&#xa;RoleEnum" vertex="1">
+          <mxGeometry height="104" width="180" x="622" y="46" as="geometry" />
+        </mxCell>
+        <mxCell id="val_role" parent="enum_role" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="ROLE_ADMIN&#xa;ROLE_TEACHER&#xa;ROLE_STUDENT" vertex="1">
+          <mxGeometry height="70" width="180" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="class_token" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="PasswordResetToken" vertex="1">
+          <mxGeometry height="160" width="220" x="620" y="193" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_token" parent="class_token" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- token: String&#xa;- user: User&#xa;- expirationDate: LocalDateTime&#xa;- used: Boolean" vertex="1">
+          <mxGeometry height="98" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_token" parent="class_token" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="220" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_token" parent="class_token" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="220" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_academic" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#B3B3B3;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=15;spacingLeft=12;spacingTop=10;fontColor=#666666;" value="Módulo Académico, Evaluación y Seguimiento (RF-05 a RF-22)" vertex="1">
+          <mxGeometry height="760" width="1500" x="50" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="class_subject" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Subject" vertex="1">
+          <mxGeometry height="160" width="220" x="90" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_subject" parent="class_subject" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- code: String&#xa;- name: String&#xa;- academicProgram: String&#xa;- active: Boolean" vertex="1">
+          <mxGeometry height="98" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_subject" parent="class_subject" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="220" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_subject" parent="class_subject" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="220" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="class_group" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="CourseGroup" vertex="1">
+          <mxGeometry height="180" width="240" x="420" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_group" parent="class_group" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- groupCode: String&#xa;- academicPeriod: String&#xa;- subject: Subject&#xa;- teacher: User&#xa;- students: List&lt;User&gt;" vertex="1">
+          <mxGeometry height="118" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_group" parent="class_group" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="240" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_group" parent="class_group" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="240" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class_ra" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="LearningOutcome" vertex="1">
+          <mxGeometry height="198" width="240" x="90" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_ra" parent="class_ra" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- code: String&#xa;- name: String&#xa;- description: String&#xa;- weightPercentage: Double&#xa;- planningClosed: Boolean&#xa;- subject: Subject" vertex="1">
+          <mxGeometry height="136" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_ra" parent="class_ra" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="240" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_ra" parent="class_ra" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="240" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="class_activity" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="EvaluationActivity" vertex="1">
+          <mxGeometry height="190" width="240" x="420" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_activity" parent="class_activity" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- name: String&#xa;- activityType: ActivityTypeEnum&#xa;- objective: String&#xa;- weightPercentage: Double&#xa;- tentativeDate: LocalDate&#xa;- learningOutcome: LearningOutcome" vertex="1">
+          <mxGeometry height="128" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_activity" parent="class_activity" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="240" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_activity" parent="class_activity" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="240" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="enum_act_type" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="«enumeration»&#xa;ActivityTypeEnum" vertex="1">
+          <mxGeometry height="124" width="180" x="790" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="val_act_type" parent="enum_act_type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="TALLER&#xa;SUSTENTACION&#xa;EXAMEN&#xa;QUIZ&#xa;EXPOSICION" vertex="1">
+          <mxGeometry height="90" width="180" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="class_grade" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="ActivityGrade" vertex="1">
+          <mxGeometry height="198" width="230" x="420" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_grade" parent="class_grade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- score: Double&#xa;- registrationDate: LocalDateTime&#xa;- lastModifiedAt: LocalDateTime&#xa;- student: User&#xa;- activity: EvaluationActivity" vertex="1">
+          <mxGeometry height="136" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_grade" parent="class_grade" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="230" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_grade" parent="class_grade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="230" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="class_obs" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Observation" vertex="1">
+          <mxGeometry height="180" width="240" x="750" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_obs" parent="class_obs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- comment: String&#xa;- category: ObservationCategory&#xa;- activityGrade: ActivityGrade&#xa;- learningOutcomeGrade: LearningOutcomeGrade&#xa;- createdAt: LocalDateTime" vertex="1">
+          <mxGeometry height="118" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_obs" parent="class_obs" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="240" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_obs" parent="class_obs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="240" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class_obscat" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="ObservationCategory" vertex="1">
+          <mxGeometry height="130" width="210" x="1060" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_obscat" parent="class_obscat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- name: String&#xa;- active: Boolean" vertex="1">
+          <mxGeometry height="68" width="210" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_obscat" parent="class_obscat" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="210" y="94" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_obscat" parent="class_obscat" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="210" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="class_improvement" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="ImprovementPlan" vertex="1">
+          <mxGeometry height="200" width="240" x="90" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_improvement" parent="class_improvement" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- originalScore: Double&#xa;- recoveryScore: Double&#xa;- isClosed: Boolean&#xa;- student: User&#xa;- learningOutcome: LearningOutcome&#xa;- createdAt: LocalDateTime" vertex="1">
+          <mxGeometry height="138" width="240" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_improvement" parent="class_improvement" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="240" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_improvement" parent="class_improvement" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="240" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="class_groupcomment" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="GroupComment" vertex="1">
+          <mxGeometry height="178" width="220" x="750" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_groupcomment" parent="class_groupcomment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- commentText: String&#xa;- publicationDate: LocalDateTime&#xa;- editableUntil: LocalDateTime&#xa;- courseGroup: CourseGroup&#xa;- teacher: User" vertex="1">
+          <mxGeometry height="116" width="220" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_groupcomment" parent="class_groupcomment" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="220" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_groupcomment" parent="class_groupcomment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="220" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_user_role" edge="1" parent="1" source="class_user" style="endArrow=open;endFill=0;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#999999;" target="enum_role" value="«uses»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_user_token" edge="1" parent="1" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="210" />
+              <mxPoint x="470" y="288" />
+            </Array>
+            <mxPoint x="320" y="209.9999999999999" as="sourcePoint" />
+            <mxPoint x="620" y="288" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_subject_group" edge="1" parent="1" source="class_subject" style="endArrow=none;startArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#666666;" target="class_group" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_subject_ra" edge="1" parent="1" source="class_subject" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;" target="class_ra" value="1 — 5..7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_ra_activity" edge="1" parent="1" source="class_ra" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;" target="class_activity" value="1 — 1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_activity_enum" edge="1" parent="1" source="class_activity" style="endArrow=open;endFill=0;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#999999;" target="enum_act_type" value="«uses»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_activity_grade" edge="1" parent="1" source="class_activity" style="endArrow=none;startArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#666666;" target="class_grade" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_grade_obs" edge="1" parent="1" source="class_grade" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;" target="class_obs" value="1 — 0..1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_obscat_obs" edge="1" parent="1" source="class_obscat" style="endArrow=none;startArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#666666;" target="class_obs" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_ra_improvement" edge="1" parent="1" source="attr_ra" style="endArrow=none;startArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#666666;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="class_improvement" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="818" />
+              <mxPoint x="380" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_group_comment" edge="1" parent="1" source="class_group" style="endArrow=none;startArrow=none;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#666666;" target="class_groupcomment" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_tracking" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#B3B3B3;dashed=1;verticalAlign=top;align=left;fontStyle=1;fontSize=15;spacingLeft=12;spacingTop=10;fontColor=#666666;" value="Módulo de Cálculo, Nota Final y Trazabilidad (RF-11, RF-15, RF-16, RF-18, RF-22)" vertex="1">
+          <mxGeometry height="300" width="1500" x="50" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="class_lograde" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="LearningOutcomeGrade" vertex="1">
+          <mxGeometry height="200" width="250" x="90" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_lograde" parent="class_lograde" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- score: Double&#xa;- isPartial: Boolean&#xa;- performanceLevel: PerformanceLevelEnum&#xa;- calculationDate: LocalDateTime&#xa;- student: User&#xa;- learningOutcome: LearningOutcome" vertex="1">
+          <mxGeometry height="138" width="250" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_lograde" parent="class_lograde" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="250" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_lograde" parent="class_lograde" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()&#xa;+ requiresImprovement(): boolean" vertex="1">
+          <mxGeometry height="30" width="250" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="enum_perflevel" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="«enumeration»&#xa;PerformanceLevelEnum" vertex="1">
+          <mxGeometry height="106" width="180" x="380" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="val_perflevel" parent="enum_perflevel" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="BAJO&#xa;BASICO&#xa;ALTO&#xa;SUPERIOR" vertex="1">
+          <mxGeometry height="72" width="180" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="class_subjectgrade" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="SubjectFinalGrade" vertex="1">
+          <mxGeometry height="160" width="230" x="650" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_subjectgrade" parent="class_subjectgrade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- finalScore: Double&#xa;- calculationDate: LocalDateTime&#xa;- student: User&#xa;- subject: Subject" vertex="1">
+          <mxGeometry height="98" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_subjectgrade" parent="class_subjectgrade" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="230" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_subjectgrade" parent="class_subjectgrade" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="230" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="class_countercomment" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="CounterComment" vertex="1">
+          <mxGeometry height="160" width="230" x="920" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_countercomment" parent="class_countercomment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- text: String&#xa;- createdAt: LocalDateTime&#xa;- student: User&#xa;- observation: Observation" vertex="1">
+          <mxGeometry height="98" width="230" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_countercomment" parent="class_countercomment" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="230" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_countercomment" parent="class_countercomment" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="230" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="class_changehistory" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="ChangeHistory" vertex="1">
+          <mxGeometry height="200" width="260" x="1190" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_changehistory" parent="class_changehistory" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="- id: Long&#xa;- affectedEntity: String&#xa;- fieldName: String&#xa;- previousValue: String&#xa;- newValue: String&#xa;- changeDate: LocalDateTime&#xa;- responsibleUser: User" vertex="1">
+          <mxGeometry height="138" width="260" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="line_changehistory" parent="class_changehistory" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="6" width="260" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="meth_changehistory" parent="class_changehistory" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;whiteSpace=wrap;html=1;fontSize=11;" value="+ getter() / setter()" vertex="1">
+          <mxGeometry height="30" width="260" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_ra_lograde" edge="1" parent="1" source="attr_ra" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="attr_lograde" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="784" />
+              <mxPoint x="30" y="1310.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_lograde_enum" edge="1" parent="1" source="class_lograde" style="endArrow=open;endFill=0;dashed=1;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#999999;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="enum_perflevel" value="«uses»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_subject_subjectgrade" edge="1" parent="1" source="attr_subject" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="meth_subjectgrade" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="50" y="525" />
+              <mxPoint x="50" y="520.4" />
+              <mxPoint x="-10" y="520.4" />
+              <mxPoint x="-10" y="1540" />
+              <mxPoint x="765" y="1540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_obs_countercomment" edge="1" parent="1" source="class_obs" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;" target="class_countercomment" value="1 — 0..1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_lograde_obs" edge="1" parent="1" source="meth_lograde" style="endArrow=none;startArrow=diamondThin;startFill=1;startSize=16;html=1;edgeStyle=orthogonalEdgeStyle;rounded=0;fontSize=10;strokeColor=#333333;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.15;entryY=0;entryDx=0;entryDy=0;" target="class_obs" value="1 — 0..*">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="277.57" y="1500" />
+              <mxPoint x="1600" y="1500" />
+              <mxPoint x="1600" y="895" />
+              <mxPoint x="786" y="895" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d7Kc3fwUc3I09WUeB8Hp-1" edge="1" parent="1" source="class_user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="meth_changehistory">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-100" y="195" />
+              <mxPoint x="-100" y="1670" />
+              <mxPoint x="1320" y="1670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
